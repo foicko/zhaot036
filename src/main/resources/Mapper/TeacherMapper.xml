@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.ujn.zhaot036.info.dao.TeacherMapper">
+  <resultMap id="BaseResultMap" type="cn.edu.ujn.zhaot036.info.dao.Teacher">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="teachername" jdbcType="VARCHAR" property="teachername" />
+    <result column="teachernum" jdbcType="VARCHAR" property="teachernum" />
+    <result column="department" jdbcType="VARCHAR" property="department" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="profession" jdbcType="VARCHAR" property="profession" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="addtime" jdbcType="TIMESTAMP" property="addtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, teachername, teachernum, department, title, profession, remark, addtime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from teacher
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from teacher
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from teacher
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.edu.ujn.zhaot036.info.dao.Teacher">
+    insert into teacher (id, teachername, teachernum, 
+      department, title, profession, 
+      remark, addtime)
+    values (#{id,jdbcType=INTEGER}, #{teachername,jdbcType=VARCHAR}, #{teachernum,jdbcType=VARCHAR}, 
+      #{department,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{profession,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{addtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.edu.ujn.zhaot036.info.dao.Teacher">
+    insert into teacher
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="teachername != null">
+        teachername,
+      </if>
+      <if test="teachernum != null">
+        teachernum,
+      </if>
+      <if test="department != null">
+        department,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="profession != null">
+        profession,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="addtime != null">
+        addtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="teachername != null">
+        #{teachername,jdbcType=VARCHAR},
+      </if>
+      <if test="teachernum != null">
+        #{teachernum,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null">
+        #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="profession != null">
+        #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null">
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.ujn.zhaot036.info.dao.Teacher">
+    update teacher
+    <set>
+      <if test="teachername != null">
+        teachername = #{teachername,jdbcType=VARCHAR},
+      </if>
+      <if test="teachernum != null">
+        teachernum = #{teachernum,jdbcType=VARCHAR},
+      </if>
+      <if test="department != null">
+        department = #{department,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="profession != null">
+        profession = #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null">
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.edu.ujn.zhaot036.info.dao.Teacher">
+    update teacher
+    set teachername = #{teachername,jdbcType=VARCHAR},
+      teachernum = #{teachernum,jdbcType=VARCHAR},
+      department = #{department,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      profession = #{profession,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      addtime = #{addtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
