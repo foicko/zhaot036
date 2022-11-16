@@ -9,6 +9,6 @@
     <title>Index</title>
 </head>
 <body>
-<a href="${pageContext.request.contextPath}/findAllTeacher">列表页</a>
+<a href="${pageContext.request.contextPath}/findAllCollege">列表页</a>
 </body>
 </html>

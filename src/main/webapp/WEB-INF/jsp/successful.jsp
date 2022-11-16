@@ -12,6 +12,6 @@
 </head>
 <body>
 Successful
-<a href="${pageContext.request.contextPath}/findAllTeacher">返回</a>
+<a href="${pageContext.request.contextPath}/findAllCollege">返回</a>
 </body>
 </html>

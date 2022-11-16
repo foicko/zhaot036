@@ -52,7 +52,7 @@
     </bean>
     <!-- 配置mapper扫描器 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="cn.edu.ujn.zhaot036.info.dao" />
+        <property name="basePackage" value="cn.edu.ujn.zhaot036.info.college.dao" />
     </bean>
     <!-- 配置包扫描器  -->
     <context:component-scan	base-package="cn.edu.ujn.zhaot036" />

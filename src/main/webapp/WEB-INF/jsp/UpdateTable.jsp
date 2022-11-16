@@ -12,27 +12,24 @@
 </head>
 <body>
 Modify here
-<form action="${pageContext.request.contextPath}/UpdateTeacher">
+<form action="${pageContext.request.contextPath}/UpdateCollege">
     <label>ID
-        <input name="id" value="${Teacher.id}" readonly>
+        <input name="id" value="${College.id}" readonly>
     </label>
-    <label>教师名
-        <input name="teachername" value="${Teacher.teachername}">
+    <label>学院名
+        <input name="collegename" value="${College.collegename}">
     </label>
-    <label>教师编号
-        <input name="teachernum" value="${Teacher.teachernum}">
+    <label>编号
+        <input name="collegenum" value="${College.collegenum}">
     </label>
-    <label>专业
-        <input name="profession" value="${Teacher.profession}">
+    <label>学院英文名
+        <input name="englishname" value="${College.englishname}">
     </label>
-    <label>部门
-        <input name="department" value="${Teacher.department}">
+    <label>是否有效
+        <input name="inuse" value="${College.inuse}">
     </label>
-    <label>职称
-        <input name="title" value="${Teacher.title}">
-    </label>
-    <label>备注
-        <input name="remark" value="${Teacher.remark}">
+    <label>描述
+        <input name="remark" value="${College.remark}">
     </label>
   <button>提交</button>
 </form>

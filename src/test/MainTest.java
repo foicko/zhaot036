@@ -1,5 +1,5 @@
-import cn.edu.ujn.zhaot036.info.dao.Teacher;
-import cn.edu.ujn.zhaot036.info.service.ITeacherService;
+import cn.edu.ujn.zhaot036.info.college.dao.College;
+import cn.edu.ujn.zhaot036.info.college.service.ICollegeService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,33 +12,34 @@ import java.util.Date;
 @ContextConfiguration(locations= {"classpath:Context/applicationContext.xml"})
 public class MainTest {
     @Autowired
-    ITeacherService teacherService;
+    ICollegeService collegeService;
     @Test
     public void FindTest(){
-//        System.out.println(this.customerService.findAll());
 //        System.out.println(new Date());
-        System.out.println(teacherService.getAllTeacher());
+        System.out.println(collegeService.getAllCollege());
     }
     @Test
     public void addTeacher(){
-        Teacher t = new Teacher();
-        t.setTeachername("温道颖");
-        t.setTeachernum("202031222036");
-        t.setProfession("养猪科学");
-        t.setAddtime(new Date());
-        teacherService.insert(t);
+        College c = new College();
+        c.setCollegename("信息科学与工程学院");
+        c.setCollegenum("202031222036");
+        c.setEnglishname("info College");
+        c.setInuse("true");
+        c.setRemark("null");
+        c.setAddtime(new Date());
+        collegeService.insert(c);
         System.out.println("成功");
     }
     @Test
     public void testUpdate(){
-        Teacher t = teacherService.getOneTeacherById(1);
+        College t = collegeService.getOneCollegeById(1);
         t.setAddtime(new Date());
-        teacherService.updateTeacher(t);
+        collegeService.updateCollege(t);
     }
     @Test
     public void testDelete(){
-        teacherService.deleteTeacher(1);
-        System.out.println(teacherService.getAllTeacher());
+        collegeService.deleteCollege(1);
+        System.out.println(collegeService.getAllCollege());
     }
 
 

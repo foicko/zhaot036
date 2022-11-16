@@ -27,7 +27,7 @@
             "org.springframework.context.support.ConversionServiceFactoryBean">
         <property name="converters">
             <set>
-                <bean class="cn.edu.ujn.zhaot036.info.convert.DateConverter" />
+                <bean class="cn.edu.ujn.zhaot036.info.college.convert.DateConverter" />
             </set>
         </property>
     </bean>

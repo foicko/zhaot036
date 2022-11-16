@@ -8,27 +8,24 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Add</title>
 </head>
 <body>
 AddUser here
-<form action="${pageContext.request.contextPath}/AddTeacher">
-    <label>教师名
-        <input name="teachername">
+<form action="${pageContext.request.contextPath}/AddCollege">
+    <label>学院名
+        <input name="collegename">
     </label>
-    <label>教师编号
-        <input name="teachernum">
+    <label>编号
+        <input name="collegenum">
     </label>
-    <label>专业
-        <input name="profession">
+    <label>学院英文名
+        <input name="englishname">
     </label>
-    <label>部门
-        <input name="department">
+    <label>是否有效
+        <input name="inuse" >
     </label>
-    <label>职称
-        <input name="title">
-    </label>
-    <label>备注
+    <label>描述
         <input name="remark">
     </label>
     <button type="submit">提交</button>
